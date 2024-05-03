@@ -73,6 +73,7 @@ function AddProductButton({ categories, funcNextProductID, funcAddProduct }) {
             <div className='form-group'>
               <label htmlFor='form-product-description'>Description</label>
               <textarea
+                required
                 className='form-control'
                 id='form-product-description'
                 placeholder='Enter description'
@@ -82,7 +83,7 @@ function AddProductButton({ categories, funcNextProductID, funcAddProduct }) {
             </div>
             <div className='form-group'>
               <label htmlFor='form-product-category'>Category</label>
-              <select className='form-control' id='form-product-category' value={category} onChange={(e) => setCategory(e.target.value)}>
+              <select required className='form-control' id='form-product-category' value={category} onChange={(e) => setCategory(e.target.value)}>
                 {categories.map((category) => (
                   <option key={category} value={category}>
                     {category}

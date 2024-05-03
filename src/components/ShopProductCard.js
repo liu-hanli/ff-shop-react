@@ -21,7 +21,7 @@ function ShopProductCard({ product, addProductToCart, displayed }) {
               </p>
               <p className='card-text'>{product.description}</p>
               <p className='card-text'>
-                <strong>Price:</strong> {product.price}€
+                <strong>Price:</strong> {product.price.toFixed(2)}€
               </p>
               <p className='card-text'>
                 <strong>Stock:</strong> {product.stock}

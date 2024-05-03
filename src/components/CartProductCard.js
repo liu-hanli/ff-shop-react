@@ -2,7 +2,7 @@ import { Collapse } from 'react-bootstrap'
 
 function CartProductCard({ product, rmProductFromCart }) {
   return (
-    <Collapse in={product.quantity > 0}>
+    <Collapse in={product.quantity > 0} timeout={300}>
       <div className='card mt-4' id={`cart-${product.id}`}>
         <div className='card-body'>
           <div className='row w-100'>
@@ -18,10 +18,13 @@ function CartProductCard({ product, rmProductFromCart }) {
                 <strong>Category:</strong> {product.category}
               </p>
               <p className='card-text'>
-                <strong>Price:</strong> {product.price}€
+                <strong>Price:</strong> {product.price.toFixed(2)}€
               </p>
               <p className='card-text'>
                 <strong>Quantity:</strong> <span id={`quantity-${product.id}`}>{product.quantity}</span>
+              </p>
+              <p className='card-text'>
+                <strong>Total:</strong> {(product.quantity * product.price).toFixed(2)}€
               </p>
               <button type='button' className='btn btn-danger rm-from-cart' id={`rm-${product.id}`} onClick={() => rmProductFromCart(product.id)}>
                 Remove
