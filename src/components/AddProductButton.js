@@ -5,7 +5,7 @@ function AddProductButton({ categories, funcNextProductID, funcAddProduct }) {
   const [visible, setVisible] = useState(false)
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
-  const [category, setCategory] = useState('')
+  const [category, setCategory] = useState(categories[0] ?? '')
   const [image, setImage] = useState('Empty.png')
   const [price, setPrice] = useState('')
   const [stock, setStock] = useState('')
